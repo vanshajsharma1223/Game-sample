@@ -1,0 +1,165 @@
+body {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.console {
+  background-color: #222;
+  border: 5px solid #555;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.screen {
+  background-color: #9bbc0f;
+  border: 2px solid #333;
+  width: 300px;
+  height: 600px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #333;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.d-pad {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.d-pad::before,
+.d-pad::after {
+  content: "";
+  position: absolute;
+  background-color: #555;
+  border: 2px solid #333;
+}
+
+.d-pad::before {
+  width: 50px;
+  height: 150px;
+  left: 50px;
+  top: 0;
+}
+
+.d-pad::after {
+  height: 50px;
+  width: 150px;
+  top: 50px;
+  left: 0;
+}
+
+.d-pad button {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+}
+
+#up {
+  top: 0;
+  left: 50px;
+}
+
+#down {
+  bottom: 0;
+  left: 50px;
+}
+
+#left {
+  top: 50px;
+  left: 0;
+}
+
+#right {
+  top: 50px;
+  right: 0;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+button {
+  background-color: #555;
+  border: 2px solid #333;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.action-buttons button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.cell {
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tetromino {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.I { background-color: cyan; }
+.J { background-color: blue; }
+.L { background-color: orange; }
+.O { background-color: yellow; }
+.S { background-color: green; }
+.T { background-color: purple; }
+.Z { background-color: red; }
+
+#game-over-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-over-message {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
